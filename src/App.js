@@ -1,25 +1,56 @@
-import logo from './logo.svg';
+// import './App.css';
+// import WeatherCard from './components/WeatherCard';
+// import WeatherList from './components/WeatherList';
+// // import WeatherContext from './components/wheathercontext';
+
+// import WeatherContext from './components/wheathercontext';
+
+
+
+
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <WeatherCard/>
+//       <WeatherList/>
+//       <WeatherContext/>
+      
+
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// App.js
+
+
 import './App.css';
+
+// import { WeatherProvider } from './WeatherContext';
+import { WeatherProvider } from './components/wheathercontext';
+
+import WeatherList from './components/WeatherList';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hava Durumu Uygulaması</h1>
+      <WeatherList />
     </div>
   );
 }
 
-export default App;
+export default function MainApp() {
+  return (
+    <WeatherProvider>
+      <App />
+    </WeatherProvider>
+  );
+}
+
